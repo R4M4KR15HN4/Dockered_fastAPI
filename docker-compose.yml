@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: fastapi-docker
+    ports:
+      - 8000:80
+    volumes:
+      - ./api:/api
+    env_file:
+      - ./api/.env
