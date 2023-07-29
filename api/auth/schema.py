@@ -1,7 +1,11 @@
-from pydantic import BaseModel,Field
+from pydantic import BaseModel
 
-class UserCreate(BaseModel):
 
-    email: str=Field(...,example="nasole@gmail.com")
-    password: str=Field(...,example="axxs@Jol123")
-    full_name: str=Field(...,example="nasole parker")
+
+class UserList(BaseModel):
+    email: str
+    fullname: str
+
+class UserCreate(UserList):
+
+    password: str

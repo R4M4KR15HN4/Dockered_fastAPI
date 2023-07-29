@@ -18,4 +18,4 @@ async def startup():
 async def shutdown():
     await database.disconnect()
 
-app.include_router(auth_router.router,tags=["Auth"])
+app.include_router(auth_router.router,tags=["uth"])
