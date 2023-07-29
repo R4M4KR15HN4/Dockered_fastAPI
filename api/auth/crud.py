@@ -12,8 +12,5 @@ def find_exist_user(email: str):
 
 
 def save_user(user: UserCreate):
-    query: str = """insert into py_users Values(nextval('user_id_seq'),:email,:password,  
-                :fullname,now() at time zone 'UTC','1')"""
-    
-
-    return database.execute(query,values={"email":user.email,"password":user.password,"fullname":user.full_name})
+    query: str = """insert into py_users Values(nextval('user_id_seq'),:email,:password,:fullname,now() at time zone 'UTC','1')"""
+    return database.execute(query,values={"email":user.email,"password":user.password,"fullname":user.fullname})
